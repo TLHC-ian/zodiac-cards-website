@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星座資訊卡片</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 min-h-screen flex flex-col items-center py-12 px-4">
+    <header class="mb-10 text-center">
+        <h1 class="text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                探索十二星座
+            </span>
+        </h1>
+        <p class="text-xl text-gray-600">點擊卡片，了解每個星座的獨特魅力！</p>
+    </header>
+
+    <section class="bg-white p-8 rounded-xl shadow-lg mb-10 w-full max-w-2xl text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">查詢您的星座</h2>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <div class="flex items-center gap-2">
+                <label for="month-select" class="text-lg text-gray-700">月份:</label>
+                <select id="month-select" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </select>
+            </div>
+            <div class="flex items-center gap-2">
+                <label for="day-select" class="text-lg text-gray-700">日期:</label>
+                <select id="day-select" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </select>
+            </div>
+            <button id="lookup-button" class="mt-4 sm:mt-0 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200">
+                查詢星座
+            </button>
+        </div>
+        <div id="lookup-result" class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200 text-left hidden">
+            </div>
+    </section>
+
+    <main id="zodiac-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl w-full">
+        </main>
+
+    <footer class="mt-12 text-gray-500 text-sm">
+        &copy; 2025 星座探索。所有權利保留。
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

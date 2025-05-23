@@ -1,0 +1,88 @@
+        /* 設定 Inter 字體為預設字體 */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* 自定義翻轉效果的 CSS */
+        .zodiac-card {
+            perspective: 1000px; /* 設置透視效果 */
+            transform-style: preserve-3d; /* 讓子元素在 3D 空間中呈現 */
+            transition: transform 0.6s; /* 翻轉動畫時長 */
+            position: relative; /* 為了讓正面和背面疊加 */
+            height: 380px; /* 調整卡片高度以容納更多內容 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zodiac-card.flipped {
+            transform: rotateY(180deg); /* 翻轉 180 度 */
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* 翻轉時隱藏背面 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem; /* 內邊距 */
+            border-radius: 1rem; /* 圓角 */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* 陰影 */
+            background-color: white; /* 背景色 */
+            text-align: center;
+        }
+
+        .card-back {
+            transform: rotateY(180deg); /* 預先翻轉背面 */
+            background-color: #f0f9ff; /* 淺藍色背景 */
+            text-align: left; /* 背面內容靠左對齊 */
+            justify-content: flex-start; /* 內容從頂部開始 */
+            padding-top: 2rem; /* 增加頂部內邊距 */
+        }
+
+        .zodiac-unicode-symbol {
+            font-size: 4rem; /* 星座符號大小 */
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-front h2 {
+            font-size: 1.75rem; /* 中文名稱字體大小 */
+            font-weight: 700; /* 粗體 */
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-front .english-name {
+            font-size: 1.125rem; /* 英文名稱字體大小 */
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-front .date-range {
+            font-size: 1rem; /* 日期範圍字體大小 */
+            color: #888;
+        }
+
+        .card-back h3 {
+            font-size: 1.5rem; /* 背面標題字體大小 */
+            font-weight: 600;
+            color: #007bff; /* 藍色 */
+            margin-bottom: 1rem;
+            text-align: center; /* 標題居中 */
+            width: 100%; /* 讓標題佔滿寬度以便居中 */
+        }
+
+        .card-back p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 0.75rem; /* 段落間距 */
+        }
+
+        .card-back p:last-child {
+            margin-bottom: 0; /* 最後一個段落沒有下邊距 */
+        }
